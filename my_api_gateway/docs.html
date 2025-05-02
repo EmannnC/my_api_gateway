@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>API Gateway Documentation</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.6; }
+        h1 { color: #333366; }
+        code { background: #f4f4f4; padding: 0.2em 0.4em; border-radius: 4px; }
+        .endpoint { margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <h1>API Gateway Documentation</h1>
+    <p>All requests must include a valid API key using the <code>X-API-Key</code> header.</p>
+
+    <div class="endpoint">
+        <h2>GET /api/users</h2>
+        <p><strong>Description:</strong> Retrieves a list of users.</p>
+        <p><strong>Headers:</strong> <code>X-API-Key: key123</code></p>
+        <p><strong>Success Response:</strong></p>
+        <pre>
+[
+  { "id": 1, "name": "Alice" },
+  { "id": 2, "name": "Bob" }
+]
+        </pre>
+        <p><strong>Possible Errors:</strong></p>
+        <ul>
+            <li><strong>401 Unauthorized</strong> - Invalid or missing API key</li>
+            <li><strong>429 Too Many Requests</strong> - Rate limit exceeded</li>
+        </ul>
+    </div>
+
+    <div class="endpoint">
+        <h2>GET /api/products</h2>
+        <p><strong>Description:</strong> Retrieves a list of products.</p>
+        <p><strong>Headers:</strong> <code>X-API-Key: key123</code></p>
+        <p><strong>Success Response:</strong></p>
+        <pre>
+[
+  { "sku": "A123", "productName": "Widget" },
+  { "sku": "B456", "productName": "Gadget" }
+]
+        </pre>
+        <p><strong>Possible Errors:</strong></p>
+        <ul>
+            <li><strong>401 Unauthorized</strong> - Invalid or missing API key</li>
+            <li><strong>429 Too Many Requests</strong> - Rate limit exceeded</li>
+        </ul>
+    </div>
+</body>
+</html>
